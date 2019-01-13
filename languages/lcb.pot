@@ -18,3 +18,7 @@ msgstr ""
 #: src/blocks/schedule-content-block/index.js:17
 msgid "restrict"
 msgstr ""
+
+#: src/blocks/schedule-content-block/index.js:19
+msgid "Add the date from which you want the content to be visible"
+msgstr ""

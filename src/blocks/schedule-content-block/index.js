@@ -16,6 +16,7 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
         __( 'date', 'schedule-content-block' ),
         __( 'restrict', 'schedule-content-block' ),
     ],
+    description: __('Add the date from which you want the content to be visible', 'schedule-content-block'),
     icon, 
     attributes: {
         date: {

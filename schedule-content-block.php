@@ -51,7 +51,7 @@ function init_schedule_content_block() {
 	);
 
 
-	// Register map-block-leaflet
+	// Register block
     register_block_type( 'schedule-content-block/schedule-content-block', array(
 		'render_callback' =>  'render_schedule_content_block',
 	 ) );
@@ -64,12 +64,8 @@ add_action('init', 'init_schedule_content_block');
 /**
  * Render in frontend 
  */
-function render_schedule_content_block($settings = array('date'), $content = '') {
-
- 	$date = strtotime($settings['date']);
-
-	if($date <= strtotime("now")) {
+function render_schedule_content_block($settings, $content = '') {
+	if( empty($settings) || strtotime($settings['date']) <= strtotime("now")) {
 		return $content;
 	}
-
 }
