@@ -1,6 +1,6 @@
 # Schedule Content Block
 
-schedule access to your blocks
+Schedule access to your content
 
 ## Goals
 

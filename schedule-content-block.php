@@ -6,7 +6,7 @@
  *
  * @wordpress-plugin
  * Plugin Name: Schedule content block
- * Description: Show your content when you want
+ * Description: Show or hide your content when you want
  * Version:     1.0.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com

@@ -1,6 +1,1 @@
-.wp-block-schedule-content-block-schedule-content-block {
-  padding: 1em 0;
-  background-image: url("./../img/pattern-locks-opened.svg");
-  background-size: 29px; }
-  .wp-block-schedule-content-block-schedule-content-block.isHidden {
-    background-image: url("./../img/pattern-locks-closed.svg"); }
+.wp-block-schedule-content-block-schedule-content-block{padding:1em 0;background-image:url("./../img/pattern-locks-opened.svg");background-size:29px}.wp-block-schedule-content-block-schedule-content-block.isHidden{background-image:url("./../img/pattern-locks-closed.svg")}
