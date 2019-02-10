@@ -3,6 +3,8 @@ const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 const { InnerBlocks } = wp.editor;
 
+import classnames from 'classnames';
+
 import './editor.scss';
 
 import icon from './icon';
@@ -18,18 +20,35 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
     ],
     description: __('Add the date from which you want the content to be visible', 'schedule-content-block'),
     icon, 
-    attributes: {
+    attributes: { 
         date: {
             type: 'string',
             default: new Date()
+        },
+        hiddenStart : {
+            type: 'boolean',
+            default: false
         }
     },
     edit: props => {
-        const { className } = props;
+        const { className, attributes } = props;
+        const { hiddenStart, date } = attributes;
+
+        const blockTime = new Date(date).getTime();
+        const now = new Date().getTime();
+
+        let isHidden;
+        if(hiddenStart) {
+            isHidden = blockTime > now;
+        } else {
+            isHidden = blockTime < now;
+        }
+
+        
         return (
             <Fragment> 
                 <Inspector {...props}/>
-                <div className={className}>
+                <div className={classnames(className, {isHidden})}>
                  <InnerBlocks templateLock={ false } /></div>
             </Fragment>
         )

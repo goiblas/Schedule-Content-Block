@@ -1,7 +1,10 @@
 .wp-block-schedule-content-block-schedule-content-block {
-    background-color: #f4f4f4;
     padding: 10px 0;
-    background-image: url('./../img/bg.png');
+    background-image: url('./../img/pattern-locks-opened.svg');
+    background-size: 29px;
+    &.isHidden {
+        background-image: url('./../img/pattern-locks-closed.svg');
+    }
 }
 
 .wp-block[data-type="schedule-content-block/schedule-content-block"]{

@@ -7,6 +7,7 @@ const {
   const {
     PanelBody,
     DateTimePicker,
+    RadioControl
   } = wp.components;
 
 
@@ -14,9 +15,13 @@ export default class Inspector extends Component {
 
     render() {
         const { attributes, setAttributes } = this.props;
-        const { date } = attributes;
+        const { date, hiddenStart } = attributes;
 
-   
+        const radioValue = hiddenStart ? 'startAsHidden' : 'startAsVisible';
+        const onChangeRatio = ( status ) => {
+            setAttributes({ hiddenStart: status == 'startAsHidden' })
+        }
+
         return (
             <InspectorControls>
                 <PanelBody>
@@ -27,7 +32,16 @@ export default class Inspector extends Component {
                     } }
                 />
                 </PanelBody>
-        
+                <PanelBody>
+                <RadioControl
+                    selected={ radioValue }
+                    options={ [
+                        { label: __('Start as visible', 'schedule-content-block'), value: 'startAsVisible' },
+                        { label:  __('Start as hidden', 'schedule-content-block'), value: 'startAsHidden' },
+                    ] }
+                    onChange={ onChangeRatio } 
+                />
+                </PanelBody>
             </InspectorControls>
         );
     }

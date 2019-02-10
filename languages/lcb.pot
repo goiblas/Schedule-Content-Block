@@ -3,22 +3,30 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/schedule-content-block/index.js:12
+#: src/blocks/schedule-content-block/index.js:14
 msgid "Schedule Content Block"
 msgstr ""
 
-#: src/blocks/schedule-content-block/index.js:15
+#: src/blocks/schedule-content-block/index.js:17
 msgid "shedule"
 msgstr ""
 
-#: src/blocks/schedule-content-block/index.js:16
+#: src/blocks/schedule-content-block/index.js:18
 msgid "date"
 msgstr ""
 
-#: src/blocks/schedule-content-block/index.js:17
+#: src/blocks/schedule-content-block/index.js:19
 msgid "restrict"
 msgstr ""
 
-#: src/blocks/schedule-content-block/index.js:19
+#: src/blocks/schedule-content-block/index.js:21
 msgid "Add the date from which you want the content to be visible"
+msgstr ""
+
+#: src/blocks/schedule-content-block/inspector.js:39
+msgid "Start as visible"
+msgstr ""
+
+#: src/blocks/schedule-content-block/inspector.js:40
+msgid "Start as hidden"
 msgstr ""

@@ -53,6 +53,16 @@ function init_schedule_content_block() {
 
 	// Register block
     register_block_type( 'schedule-content-block/schedule-content-block', array(
+		'attributes' => array(
+			'date' => array(
+				'type' => 'string',
+				'default' => new DateTime()
+			),
+			'hiddenStart' => array(
+				'type' =>  'boolean',
+				'default' => true
+			)
+		),
 		'render_callback' =>  'render_schedule_content_block',
 	 ) );
 }

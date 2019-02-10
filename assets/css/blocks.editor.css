@@ -1,1 +1,11 @@
-.wp-block-schedule-content-block-schedule-content-block{background-color:#f4f4f4;padding:10px 0;background-image:url("./../img/bg.png")}.wp-block[data-type="schedule-content-block/schedule-content-block"]{max-width:100%;margin:0;padding:0}
+.wp-block-schedule-content-block-schedule-content-block {
+  padding: 10px 0;
+  background-image: url("./../img/pattern-locks-opened.svg");
+  background-size: 29px; }
+  .wp-block-schedule-content-block-schedule-content-block.isHidden {
+    background-image: url("./../img/pattern-locks-closed.svg"); }
+
+.wp-block[data-type="schedule-content-block/schedule-content-block"] {
+  max-width: 100%;
+  margin: 0;
+  padding: 0; }
