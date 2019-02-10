@@ -75,7 +75,18 @@ add_action('init', 'init_schedule_content_block');
  * Render in frontend 
  */
 function render_schedule_content_block($settings, $content = '') {
-	if( empty($settings) || strtotime($settings['date']) <= strtotime("now")) {
-		return $content;
+	$hiddenStart = $settings['hiddenStart']; 
+	$date = strtotime($settings['date']);
+	$now = strtotime("now");
+
+	if($hiddenStart) {
+		if( $date <= $now) {
+			return $content;
+		}
+	} else {
+		if( $date >= $now) {
+			return $content;
+		}
 	}
+
 }

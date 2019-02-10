@@ -21,15 +21,15 @@ export default class Inspector extends Component {
         const onChangeRatio = ( status ) => {
             setAttributes({ hiddenStart: status == 'startAsHidden' })
         }
-
+        const onChangeDate = (date) => {
+            setAttributes({date});
+        }
         return (
             <InspectorControls>
                 <PanelBody>
                  <DateTimePicker
                     currentDate={ date }
-                    onChange={ ( date ) => {
-                        setAttributes({date})
-                    } }
+                    onChange={ onChangeDate }
                 />
                 </PanelBody>
                 <PanelBody>

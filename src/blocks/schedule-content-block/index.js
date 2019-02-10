@@ -27,7 +27,7 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
         },
         hiddenStart : {
             type: 'boolean',
-            default: false
+            default: true
         }
     },
     edit: props => {
@@ -36,7 +36,7 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
 
         const blockTime = new Date(date).getTime();
         const now = new Date().getTime();
-
+     
         let isHidden;
         if(hiddenStart) {
             isHidden = blockTime > now;
