@@ -24,3 +24,7 @@ Note: This plugin requires WordPress 5
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Add Schedule Content Block to the content
 5. Includes everything you want to program your visualization inside
+
+== Screenshots ==
+
+1. Example of content locked
