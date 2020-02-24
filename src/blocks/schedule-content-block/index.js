@@ -1,12 +1,8 @@
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
-const { InnerBlocks } = wp.editor;
-
+import { InnerBlocks } from '@wordpress/block-editor';
+import { Fragment } from '@wordpress/element';
+import { registerBlockType } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-
-import './editor.scss';
-
 import icon from './icon';
 import Inspector from './inspector';
 
@@ -22,8 +18,8 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
     icon, 
     attributes: { 
         date: {
-            type: 'string',
-            default: new Date()
+            type: 'number',
+            default: Date.now()
         },
         hiddenStart : {
             type: 'boolean',
@@ -43,13 +39,11 @@ export default registerBlockType(  'schedule-content-block/schedule-content-bloc
         } else {
             isHidden = blockTime < now;
         }
-
-        
         return (
             <Fragment> 
-                <Inspector {...props}/>
-                <div className={classnames(className, {isHidden})}>
-                 <InnerBlocks templateLock={ false } /></div>
+                <Inspector { ...props } />
+                <div className={ classnames(className, {isHidden}) }>
+                    <InnerBlocks templateLock={ false } /></div>
             </Fragment>
         )
     },
