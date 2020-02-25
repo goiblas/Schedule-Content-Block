@@ -16,6 +16,7 @@
     "@wordpress/scripts": "^6.2.0"
   },
   "dependencies": {
+    "@wordpress/babel-plugin-makepot": "^3.4.0",
     "classnames": "^2.2.6"
   }
 }
