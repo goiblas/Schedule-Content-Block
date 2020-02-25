@@ -4,7 +4,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import icon from './icon';
-import Inspector from './inspector';
+import Inspector from './Inspector';
 
 export default registerBlockType(  'schedule-content-block/schedule-content-block', {
     title:__('Schedule Content Block', 'schedule-content-block'),
