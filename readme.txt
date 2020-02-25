@@ -31,6 +31,9 @@ Note: This plugin requires WordPress 5
 
 == Changelog ==
 
+= 1.1.1 =
+* **Deploy.** github actions
+
 = 1.1.0 =
 * **Fix Bug.** Bug compare time picked, thanks to @kgagne
 * **Improvement.** Environment
