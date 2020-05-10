@@ -2,6 +2,7 @@
 /design
 /node_modules
 /.github
+/.git
 
 .babelrc
 .gitignore
