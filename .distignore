@@ -1,0 +1,10 @@
+/src
+/design
+/node_modules
+/.github
+
+.babelrc
+.gitignore
+package-lock.json
+package.json
+README.md
