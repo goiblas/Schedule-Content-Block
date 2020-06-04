@@ -1,1 +1,1 @@
-wp.i18n.setLocaleData( { '': {} }, 'schedule-content-block' );
+wp.i18n.setLocaleData({ "": {} }, "schedule-content-block");

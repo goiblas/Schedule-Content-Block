@@ -31,6 +31,9 @@ Note: This plugin requires WordPress 5
 
 == Changelog ==
 
+= 2.0.0 =
+* **Improvement.** Enabled multiple dates, thanks to @carlnewton @acdc20
+
 = 1.1.3 =
 * **Update.** Update wp version
 

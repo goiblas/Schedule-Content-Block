@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name: Schedule content block
  * Description: Show or hide your content when you want
- * Version:     1.1.2
+ * Version:     2.0.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
  * Text Domain: schedule-content-block
@@ -61,7 +61,14 @@ function init_schedule_content_block() {
 			'hiddenStart' => array(
 				'type' =>  'boolean',
 				'default' => true
-			)
+			),
+			'isMultiDate' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'dates'=> [
+				'type' => 'array'
+			]
 		),
 		'render_callback' =>  'render_schedule_content_block',
 	 ) );
@@ -73,6 +80,36 @@ add_action('init', 'init_schedule_content_block');
  * Render in frontend 
  */
 function render_schedule_content_block($settings, $content = '') {
+	if($settings['isMultiDate']) {
+		return render_multidate_schedule_content_block($settings, $content);
+	} else {
+		return render_singledate_schedule_content_block($settings, $content);
+	}
+}
+
+function render_multidate_schedule_content_block($settings, $content) {
+	$dates = $settings['dates'];
+
+	if(empty($dates)) {
+		return $content;
+	}
+
+	$date = new DateTime();
+	$now = $date->getTimestamp();
+	$hidden = false;
+
+	foreach ($dates as $key => $value) {
+		if($value['timestamp'] / 1000 <= $now) {
+			$hidden = $value['hidden'];
+		}
+	}
+
+	if(!$hidden) {
+		return $content;
+	}
+}
+function render_singledate_schedule_content_block($settings, $content) {
+
 	$hiddenStart = $settings['hiddenStart'];
 
 	$block_date = $settings['date'] / 1000;
@@ -88,5 +125,4 @@ function render_schedule_content_block($settings, $content = '') {
 			return $content;
 		}
 	}
-
 }

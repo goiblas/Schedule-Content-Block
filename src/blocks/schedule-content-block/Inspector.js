@@ -1,40 +1,36 @@
-import { InspectorControls } from '@wordpress/block-editor';
-import { Component } from '@wordpress/element';
-import { PanelBody,  DateTimePicker,  RadioControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { InspectorControls } from "@wordpress/block-editor";
+import { Component } from "@wordpress/element";
+import { PanelBody, ToggleControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
+import MultiDate from "./components/multidate";
+import SingleDate from "./components/singleDate";
 
 export default class Inspector extends Component {
-    render() {
-        const { attributes, setAttributes } = this.props;
-        const { date, hiddenStart } = attributes;
+  render() {
+    const { attributes, setAttributes } = this.props;
+    const { date, hiddenStart, isMultiDate, dates } = attributes;
+    const setDates = newDates => setAttributes({ dates: newDates });
 
-        const radioValue = hiddenStart ? 'startAsHidden' : 'startAsVisible';
-        const onChangeRatio = ( status ) => {
-            setAttributes({ hiddenStart: status === 'startAsHidden' })
-        }
-        const onChangeDate = (dateSelected) => {
-            const timestamp =  new Date(dateSelected).getTime()
-            setAttributes({date: timestamp});
-        }
-        return (
-            <InspectorControls>
-                <PanelBody>
-                    <DateTimePicker
-                        currentDate={ date }
-                        onChange={ onChangeDate }
-                        />
-                </PanelBody>
-                <PanelBody>
-                    <RadioControl
-                        selected={ radioValue }
-                        options={ [
-                                { label: __('Start as visible', 'schedule-content-block'), value: 'startAsVisible' },
-                                { label:  __('Start as hidden', 'schedule-content-block'), value: 'startAsHidden' },
-                            ] }
-                        onChange={ onChangeRatio } 
-                        />
-                </PanelBody>
-            </InspectorControls>
-        );
-    }
+    return (
+      <InspectorControls>
+        <PanelBody>
+          <ToggleControl
+            label={__("Enable multiple dates", "schedule-content-block")}
+            checked={isMultiDate}
+            onChange={() => setAttributes({ isMultiDate: !isMultiDate })}
+          />
+        </PanelBody>
+
+        {isMultiDate ? (
+          <MultiDate dates={dates} setDates={setDates} />
+        ) : (
+          <SingleDate
+            date={date}
+            setAttributes={setAttributes}
+            hiddenStart={hiddenStart}
+          />
+        )}
+      </InspectorControls>
+    );
+  }
 }
