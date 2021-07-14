@@ -4,7 +4,7 @@ Plugin URI: https://goiblas.com
 Contributors: goiblas
 Tags: blocks, Schedule, contents
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Note: This plugin requires WordPress 5
 1. Example of content locked
 
 == Changelog ==
+
+= 2.0.1 =
+* **Improvement.** Compatibility with WordPress 5.8
 
 = 2.0.0 =
 * **Improvement.** Enabled multiple dates, thanks to @carlnewton @acdc20
