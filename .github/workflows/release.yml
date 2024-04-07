@@ -14,3 +14,4 @@ jobs:
             SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
             ASSETS_DIR: ${{ secrets.ASSETS_DIR }}
             SLUG: schedule-content-block
+            IGNORE_OTHER_FILES: true
