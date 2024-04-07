@@ -8,6 +8,8 @@ Tested up to: 6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Shows or hides contents depending on a specific date and time
+
 == Description ==
 
 shows or hides contents depending on a specific date and time
